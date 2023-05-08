@@ -4,8 +4,8 @@ let minutes=0;
 let displayMinutes=0;
 let hours=0;
 let displayHours=0;
-let second=15000;
 let intervalId = null;
+var started=false;
 
 function loop() {
   intervalId = setInterval(() => {
@@ -47,13 +47,12 @@ function loop() {
   }, 1000);
 }
 
-    
-
-
-
-
 $(".start").click(function () { 
-    loop();
+    if(!started){
+      loop();
+      started=true;
+    }
+
 
 });
 
